@@ -23,19 +23,22 @@ DelaunayVertex *vertexAtInfinity;
    if (x == NAN || y == NAN) {
       return [self vertexAtInfinity];
    } else {
-      DelaunayVertex *vertex = [[[DelaunayVertex alloc] init] autorelease];
+      DelaunayVertex *vertex = [DelaunayVertex new];
       vertex.coordinates = CGPointMake(x, y);
       vertex.index = -1;
       return vertex;
    }
 }
 + (DelaunayVertex *) vertexAtInfinity {
-   if(!vertexAtInfinity) {
-      vertexAtInfinity = [self vertexWithX: NAN y: NAN];
-      vertexAtInfinity.index = -1;
-      [vertexAtInfinity retain];
-   }
-   return vertexAtInfinity;
+	static dispatch_once_t			sOnce;
+	static DelaunayVertex *			sVertexAtInfinity;
+	
+	dispatch_once( &sOnce, ^{
+		sVertexAtInfinity = [self vertexWithX: NAN y: NAN];
+		sVertexAtInfinity.index = -1;
+	});
+	
+	return sVertexAtInfinity;
 }
 
 + (DelaunayVertex *) intersect: (DelaunayHalfEdge *) halfEdge0 with: (DelaunayHalfEdge *) halfEdge1 {

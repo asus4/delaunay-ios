@@ -19,11 +19,11 @@
 
 
 + (DelaunayHalfEdge *) dummy {
-   return [[[DelaunayHalfEdge alloc] init] autorelease];
+   return [DelaunayHalfEdge new];
 }
 
 + (DelaunayHalfEdge *) halfEdgeWithEdge: (DelaunayEdge *)edge orientation: (DelaunayOrientation *) orientation {
-   DelaunayHalfEdge *result = [[[DelaunayHalfEdge alloc] init] autorelease];
+   DelaunayHalfEdge *result = [DelaunayHalfEdge new];
    result.edge = edge;
    result.orientation = orientation;
    return result;

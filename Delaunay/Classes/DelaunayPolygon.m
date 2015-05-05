@@ -14,15 +14,9 @@
 @synthesize vertices;
 
 + (DelaunayPolygon *) polygonWithVertices: (NSMutableArray *) vertices {
-   DelaunayPolygon *result = [[[DelaunayPolygon alloc] init] autorelease];
+   DelaunayPolygon *result = [DelaunayPolygon new];
    result.vertices = vertices;
    return result;
-}
-
-
-- (void) dealloc {
-   [vertices release];
-   [super dealloc];
 }
 
 - (float) area {

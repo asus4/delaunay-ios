@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class DelaunaySite, DelaunayVertex, DelaunayLineSegment, DelaunayOrientation;
 
@@ -14,10 +15,10 @@
     
 }
 
-@property (nonatomic, retain) DelaunaySite *leftSite;
-@property (nonatomic, retain) DelaunaySite *rightSite;
-@property (nonatomic, retain) DelaunayVertex *leftVertex;
-@property (nonatomic, retain) DelaunayVertex *rightVertex;
+@property (nonatomic, strong) DelaunaySite *leftSite;
+@property (nonatomic, strong) DelaunaySite *rightSite;
+@property (nonatomic, strong) DelaunayVertex *leftVertex;
+@property (nonatomic, strong) DelaunayVertex *rightVertex;
 
 @property (nonatomic, assign) CGPoint leftClippedPoint;
 @property (nonatomic, assign) CGPoint rightClippedPoint;

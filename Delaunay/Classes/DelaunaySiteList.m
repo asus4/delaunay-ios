@@ -14,7 +14,7 @@
 @synthesize currentIndex, sites;
 
 + (DelaunaySiteList *) siteList {
-   DelaunaySiteList *siteList = [[[DelaunaySiteList alloc] init] autorelease];
+   DelaunaySiteList *siteList = [DelaunaySiteList new];
    return siteList;
 }
 
@@ -28,13 +28,6 @@
 
 - (NSString *) description {
    return [NSString stringWithFormat: @"SiteList (currentIndex: %d sorted: %d sites: %@", currentIndex, sorted, sites];
-}
-
-
-
-- (void) dealloc {
-   [sites release];
-   [super dealloc];
 }
 
 - (CGRect) sitesBounds {

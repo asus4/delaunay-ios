@@ -26,7 +26,7 @@
 @synthesize edges, edgeOrientations, region;
 
 + (DelaunaySite *) siteWithPoint: (CGPoint) point index: (NSInteger) index weight: (float) weight {
-   DelaunaySite *result = [[[DelaunaySite alloc] init] autorelease];
+   DelaunaySite *result = [DelaunaySite new];
    result.coordinates = point;
    result.index = index;
    result.weight = weight;
@@ -79,7 +79,7 @@
 }
 
 - (DelaunayEdge *) nearestEdge {
-   [self.edges sortUsingSelector: @selector(compareTo:)];
+   [self.edges sortUsingSelector: @selector(compareSitesShorter:)];
    return [self.edges objectAtIndex: 0];
 }
 
@@ -165,7 +165,6 @@
    DelaunayEdgeReorderer *reorderer = [[DelaunayEdgeReorderer alloc] initWithEdges: self.edges criterion: [DelaunayVertex class]];
    self.edges = [reorderer edges];
    self.edgeOrientations = [reorderer edgeOrientations];
-   [reorderer release];
 }
 
 - (NSMutableArray *) clipToBounds: (CGRect) bounds {
@@ -329,14 +328,6 @@
    {
       [points addPoint: newRightPoint];
    }
-}
-
-
-- (void) dealloc {
-   [edges release];
-   [edgeOrientations release];
-   [region release];
-   [super dealloc];
 }
 
 

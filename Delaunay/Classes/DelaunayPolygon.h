@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 typedef enum {
    DelaunayWindingNone = 0,
    DelaunayWindingClockwise,
@@ -20,7 +19,7 @@ typedef enum {
     
 }
 
-@property (nonatomic, retain) NSMutableArray *vertices;
+@property (nonatomic, strong) NSMutableArray *vertices;
 
 + (DelaunayPolygon *) polygonWithVertices: (NSMutableArray *) vertices;
 

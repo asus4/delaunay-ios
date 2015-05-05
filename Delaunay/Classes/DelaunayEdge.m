@@ -44,7 +44,7 @@ DelaunayEdge *deletedEdge;
       b = 1.0; a = dx/dy; c /= dy;
    }
    
-   DelaunayEdge *edge = [[[DelaunayEdge alloc] init] autorelease];
+   DelaunayEdge *edge = [DelaunayEdge new];
    
    edge.leftSite = site0;
    edge.rightSite = site1;
@@ -274,15 +274,6 @@ DelaunayEdge *deletedEdge;
       leftClippedPoint = CGPointMake(x1, y1);
       self.visible = YES;
    }
-}
-
-
-- (void) dealloc {
-   [leftSite release];
-   [rightSite release];
-   [leftVertex release];
-   [rightVertex release];
-   [super dealloc];
 }
 
 @end

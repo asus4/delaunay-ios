@@ -116,11 +116,5 @@
    return newEdges;
 }
 
-- (void) dealloc {
-   [edges release];
-   [edgeOrientations release];
-   [super dealloc];
-}
-
 @end
 

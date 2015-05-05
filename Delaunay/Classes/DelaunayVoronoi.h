@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class DelaunaySiteList, DelaunaySite, DelaunayHalfEdge;
 
@@ -14,10 +15,10 @@
    DelaunaySite *bottomMostSite;
 }
 
-@property (nonatomic, retain) DelaunaySiteList *siteList;
-@property (nonatomic, retain) NSMutableDictionary *sitesIndexedByLocation;
-@property (nonatomic, retain) NSMutableArray *triangles;
-@property (nonatomic, retain) NSMutableArray *edges;
+@property (nonatomic, strong) DelaunaySiteList *siteList;
+@property (nonatomic, strong) NSMutableDictionary *sitesIndexedByLocation;
+@property (nonatomic, strong) NSMutableArray *triangles;
+@property (nonatomic, strong) NSMutableArray *edges;
 
 @property (nonatomic, assign) CGRect plotBounds;
 

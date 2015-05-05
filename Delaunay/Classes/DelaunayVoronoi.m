@@ -22,16 +22,8 @@
 @synthesize siteList, sitesIndexedByLocation, triangles, edges;
 @synthesize plotBounds;
 
-- (void) dealloc {
-   [siteList release];
-   [sitesIndexedByLocation release];
-   [triangles release];
-   [edges release];
-   [super dealloc];
-}
-
 + (DelaunayVoronoi *) voronoiWithPoints: (NSArray *) points plotBounds: (CGRect) plotBounds {
-   DelaunayVoronoi *voronoi = [[[DelaunayVoronoi alloc] init] autorelease];
+   DelaunayVoronoi *voronoi = [DelaunayVoronoi new];
    voronoi.siteList = [DelaunaySiteList siteList];
    voronoi.sitesIndexedByLocation = [NSMutableDictionary dictionary];
    [voronoi addSites: points];

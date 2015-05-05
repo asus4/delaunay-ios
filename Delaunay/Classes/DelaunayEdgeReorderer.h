@@ -13,8 +13,8 @@
     
 }
 
-@property (nonatomic, retain) NSMutableArray *edges; 
-@property (nonatomic, retain) NSMutableArray *edgeOrientations;
+@property (nonatomic, strong) NSMutableArray *edges;
+@property (nonatomic, strong) NSMutableArray *edgeOrientations;
 
 - (id) initWithEdges: (NSArray *) originalEdges criterion: (Class) klass;
 - (NSMutableArray *) reorderEdges: (NSArray *) originalEdges criterion: (Class) criterion;

@@ -15,7 +15,7 @@
 @synthesize leftEnd, rightEnd;
 
 + (DelaunayEdgeList *) edgeListWithMinX: (CGFloat) _minX deltaX: (CGFloat) _deltaX sqrtNumSites: (NSInteger) _sqrtNumSites {
-   return [[[DelaunayEdgeList alloc] initWithMinX: _minX deltaX: _deltaX sqrtNumSites: _sqrtNumSites] autorelease];
+   return [[DelaunayEdgeList alloc] initWithMinX: _minX deltaX: _deltaX sqrtNumSites: _sqrtNumSites];
 }
 
 - (id) initWithMinX: (CGFloat) _minX deltaX: (CGFloat) _deltaX sqrtNumSites: (NSInteger) _sqrtNumSites {
@@ -139,13 +139,6 @@
    }
    if (halfEdge == nullEdge) halfEdge = nil;
    return halfEdge;
-}
-
-- (void) dealloc {
-   [hash release];
-   [leftEnd release];
-   [rightEnd release];
-   [super dealloc];
 }
 
 @end

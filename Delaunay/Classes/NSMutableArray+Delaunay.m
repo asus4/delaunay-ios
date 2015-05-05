@@ -6,6 +6,9 @@
 //  Copyright 2011 ZWorkbench, Inc. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import "Delaunay.h"
 
 

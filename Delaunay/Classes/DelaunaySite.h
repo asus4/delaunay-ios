@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import "DelaunayCoordinate.h"
 
 @class DelaunayEdge;
@@ -30,9 +32,9 @@ typedef enum {
 @property (nonatomic, assign) float weight;
 @property (nonatomic, assign) NSUInteger index;
 
-@property (nonatomic, retain) NSMutableArray *edges;
-@property (nonatomic, retain) NSMutableArray *edgeOrientations;
-@property (nonatomic, retain) NSMutableArray *region;
+@property (nonatomic, strong) NSMutableArray *edges;
+@property (nonatomic, strong) NSMutableArray *edgeOrientations;
+@property (nonatomic, strong) NSMutableArray *region;
 
 
 - (void) move:(CGPoint) point;

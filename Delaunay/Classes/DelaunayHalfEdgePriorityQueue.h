@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class DelaunayHalfEdge, DelaunayVertex;
 
@@ -18,7 +19,6 @@
    CGFloat minY;
    CGFloat maxY;
    CGFloat deltaY;
-    
 }
 
 + (DelaunayHalfEdgePriorityQueue *) queueWithMinY: (CGFloat) minY deltaY: (CGFloat) deltaY sqrtNumSites: (NSInteger) sqrtNumSites;

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class DelaunayHalfEdge;
 
@@ -17,8 +18,8 @@
    NSMutableArray *hash;
 }
 
-@property (nonatomic, retain) DelaunayHalfEdge *leftEnd;
-@property (nonatomic, retain) DelaunayHalfEdge *rightEnd;
+@property (nonatomic, strong) DelaunayHalfEdge *leftEnd;
+@property (nonatomic, strong) DelaunayHalfEdge *rightEnd;
 
 + (DelaunayEdgeList *) edgeListWithMinX: (CGFloat) _minX deltaX: (CGFloat) _deltaX sqrtNumSites: (NSInteger) _sqrtNumSites;
 

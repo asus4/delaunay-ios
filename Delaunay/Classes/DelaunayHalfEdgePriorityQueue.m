@@ -13,7 +13,7 @@
 @implementation DelaunayHalfEdgePriorityQueue
 
 + (DelaunayHalfEdgePriorityQueue *) queueWithMinY: (CGFloat) ymin deltaY: (CGFloat) deltaY sqrtNumSites: (NSInteger) sqrtNumSites {
-   return [[[DelaunayHalfEdgePriorityQueue alloc] initWithMinY: ymin deltaY: deltaY sqrtNumSites: sqrtNumSites] autorelease];
+   return [[DelaunayHalfEdgePriorityQueue alloc] initWithMinY: ymin deltaY: deltaY sqrtNumSites: sqrtNumSites];
 }
 
 - (id) initWithMinY: (CGFloat) _minY deltaY: (CGFloat) _deltaY sqrtNumSites: (CGFloat) _sqrtNumSites {
@@ -129,13 +129,5 @@
    count--;
    return result;
 }
-
-
-
-- (void) dealloc {
-   [hash release];
-   [super dealloc];
-}
-
 
 @end

@@ -14,7 +14,7 @@
 @synthesize  p0, p1;
 
 +(DelaunayLineSegment *) lineSegmentWithLeftCoordinate: (CGPoint) left rightCoordinate: (CGPoint) right {
-   DelaunayLineSegment *lx = [[[DelaunayLineSegment alloc] init] autorelease];
+   DelaunayLineSegment *lx = [DelaunayLineSegment new];
    lx.p0 = left;
    lx.p1 = right;
    return lx;
