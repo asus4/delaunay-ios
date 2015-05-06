@@ -34,7 +34,7 @@
 }
 
 - (NSString *) description {
-   return [NSString stringWithFormat: @"HalfEdgePriorityQueue (minY: %f deltaY: %f hashSize: %d count: %d minBucket: %d hash: %@", minY, deltaY, hashSize, count, minBucket, hash];
+   return [NSString stringWithFormat: @"HalfEdgePriorityQueue (minY: %f deltaY: %f hashSize: %ld count: %ld minBucket: %ld hash: %@", minY, deltaY, (long)hashSize, (long)count, (long)minBucket, hash];
 }
 
 - (void) insert: (DelaunayHalfEdge *) halfEdge vertex: (DelaunayVertex *) v offset: (CGFloat) offset {
@@ -48,9 +48,9 @@
    }
    halfEdge.nextInPriorityQueue = previous.nextInPriorityQueue;
    previous.nextInPriorityQueue = halfEdge;
-   NSLog(@"Assigned next:");
-   NSLog(@"%@", halfEdge);
-   NSLog(@"%@", halfEdge.nextInPriorityQueue);
+//   NSLog(@"Assigned next:");
+//   NSLog(@"%@", halfEdge);
+//   NSLog(@"%@", halfEdge.nextInPriorityQueue);
    count++;
 }
 

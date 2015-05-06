@@ -91,7 +91,7 @@ DelaunayVertex *vertexAtInfinity;
 }
 
 - (NSString *) description {
-   return [NSString stringWithFormat: @"V%d: (%f, %f)", self.index, coordinates.x, coordinates.y];
+   return [NSString stringWithFormat: @"V%ld: (%f, %f)", (long)self.index, coordinates.x, coordinates.y];
 }
 
 - (BOOL) isReal {

@@ -27,7 +27,7 @@
 }
 
 - (NSString *) description {
-   return [NSString stringWithFormat: @"SiteList (currentIndex: %d sorted: %d sites: %@", currentIndex, sorted, sites];
+   return [NSString stringWithFormat: @"SiteList (currentIndex: %ld sorted: %d sites: %@", (long)currentIndex, sorted, sites];
 }
 
 - (CGRect) sitesBounds {

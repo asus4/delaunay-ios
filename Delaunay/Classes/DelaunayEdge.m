@@ -66,8 +66,8 @@ DelaunayEdge *deletedEdge;
 - (NSString *) description {
    NSString *siteDesc = @"";
    NSString *vertexDesc = @"";
-   siteDesc =   [NSString stringWithFormat: @"S: %d-%d", leftSite == nil ? -1 : leftSite.index, rightSite == nil ? -1 : rightSite.index];
-   vertexDesc = [NSString stringWithFormat: @"V: %d-%d", leftVertex == nil ? -1 : leftVertex.index, rightVertex == nil ? -1 : rightVertex.index];
+   siteDesc =   [NSString stringWithFormat: @"S: %d-%d", (int)(leftSite == nil ? -1 : leftSite.index), (int)(rightSite == nil ? -1 : (int) rightSite.index)];
+   vertexDesc = [NSString stringWithFormat: @"V: %d-%d", (int)(leftVertex == nil ? -1 : leftVertex.index), (int)(rightVertex == nil ? -1 : rightVertex.index)];
    return [NSString stringWithFormat: @"E (%@ %@ a,b,c: %f,%f,%f)", siteDesc, vertexDesc, a, b, c];
 }
 
@@ -94,7 +94,7 @@ DelaunayEdge *deletedEdge;
       self.rightVertex = vertex;
    }
    if (self.leftVertex && self.rightVertex) {
-      NSLog(@"%@", self);
+//    NSLog(@"%@", self);
    }
 }
 

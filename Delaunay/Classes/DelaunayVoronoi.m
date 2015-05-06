@@ -60,7 +60,7 @@
 
 -(NSArray *) regionForPoint: (CGPoint) p {
    DelaunaySite *site = [sitesIndexedByLocation objectForKey: [NSValue valueWithCGPoint: p]];
-   NSLog(@"Site for point (%f,%f) is %@", p.x, p.y, site);
+//   NSLog(@"Site for point (%f,%f) is %@", p.x, p.y, site);
    if (site) {
       return [site region: self.plotBounds];
    } else {
@@ -112,7 +112,7 @@
    NSMutableArray *halfEdgesForCurrentSite = [NSMutableArray array];
 
    bottomMostSite = [self.siteList next];
-   NSLog(@"%@", bottomMostSite);
+//   NSLog(@"%@", bottomMostSite);
    newSite = [self.siteList next];
    
    NSInteger loopCount = 0;
@@ -126,7 +126,7 @@
       BOOL newSiteIsLessThanNewInTStar = [DelaunayVoronoi compareByYThenXWithSite: newSite point: newintstar] == NSOrderedAscending;
       if ((newSite != nil) && ([heap empty] || newSiteIsLessThanNewInTStar))
       {
-         NSLog(@"%@", newSite);
+//         NSLog(@"%@", newSite);
          lbnd = [edgeList edgeListLeftNeighbor: newSite.coordinates];	// the Halfedge just to the left of newSite
          rbnd = [lbnd edgeListRightNeighbor];		// the Halfedge just to the right
          bottomSite = [self rightRegion: lbnd];		// this is the same as leftRegion(rbnd)
@@ -169,7 +169,7 @@
       } else if (![heap empty]) {
          /* intersection is smallest */
          lbnd = [heap extractMin];
-         NSLog(@"Extracted min: %@", lbnd);
+//         NSLog(@"Extracted min: %@", lbnd);
          llbnd = lbnd.edgeListLeftNeighbor;
          rbnd = lbnd.edgeListRightNeighbor;
          rrbnd = rbnd.edgeListRightNeighbor;
@@ -178,10 +178,11 @@
          // these three sites define a Delaunay triangle
          // (not actually using these for anything...)
          //_triangles.push(new Triangle(bottomSite, topSite, rightRegion(lbnd)));
+		 [self.triangles addObject:@[ bottomSite, topSite, [self rightRegion:lbnd] ]];
          
          v = lbnd.vertex;
          v.index = vertexIndex++;
-         NSLog(@"%@", v);
+//         NSLog(@"%@", v);
          [lbnd.edge setVertex: v withOrientation: lbnd.orientation];
          [rbnd.edge setVertex: v withOrientation: rbnd.orientation];
          [edgeList remove: lbnd];
@@ -222,7 +223,7 @@
    for( lbnd = edgeList.leftEnd.edgeListRightNeighbor ;
        lbnd != edgeList.rightEnd ;
        lbnd = lbnd.edgeListRightNeighbor) {
-      NSLog(@"%@", lbnd.edge);
+//      NSLog(@"%@", lbnd.edge);
    }
 
    // we need the vertices to clip the edges

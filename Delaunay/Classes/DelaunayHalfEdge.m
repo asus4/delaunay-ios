@@ -31,7 +31,7 @@
 
 - (NSString *) description {
    return [NSString stringWithFormat: @"HalfEdge (id: %p vertex: %d edge: %d - %d orientation: %@ leftNeighbor: %p rightNeighbor: %p nextInPriorityQueue: %p ystar: %f", 
-           self, vertex == nil ? -100 : vertex.index, edge.leftSite ? edge.leftSite.index : -1, edge.rightSite ? edge.rightSite.index : -1, orientation, edgeListLeftNeighbor, edgeListRightNeighbor, nextInPriorityQueue, ystar];
+           self, vertex == nil ? -100 : vertex.index, (int)(edge.leftSite ? edge.leftSite.index : -1), (int)(edge.rightSite ? edge.rightSite.index : -1), orientation, edgeListLeftNeighbor, edgeListRightNeighbor, nextInPriorityQueue, ystar];
 }
 
 - (BOOL) isRightOf: (CGPoint) p {

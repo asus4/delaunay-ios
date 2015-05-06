@@ -40,7 +40,7 @@
 }
 
 - (NSString *) description {
-   return [NSString stringWithFormat: @"S%d (%f, %f)", index, coordinates.x, coordinates.y];
+   return [NSString stringWithFormat: @"S%lu (%f, %f)", (unsigned long)index, coordinates.x, coordinates.y];
 }
 
 - (BOOL) isReal {
@@ -79,7 +79,7 @@
 }
 
 - (DelaunayEdge *) nearestEdge {
-   [self.edges sortUsingSelector: @selector(compareSitesShorter:)];
+//   [self.edges sortUsingSelector: @selector(compareTo:)];
    return [self.edges objectAtIndex: 0];
 }
 
@@ -200,7 +200,7 @@
    }
    */
    
-   for (int j=i+1; j<n; j++) {
+   for (long j=i+1; j<n; j++) {
       edge = [edges objectAtIndex: j];
       if (!edge.visible) {
          continue;
